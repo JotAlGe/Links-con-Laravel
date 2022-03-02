@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Link;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class LinkFactory extends Factory
@@ -11,8 +12,13 @@ class LinkFactory extends Factory
      *
      * @return array
      */
+    protected $model = Link::class;
     public function definition()
     {
-        return [];
+        return [
+            'title' => $this->faker->name(),
+            'url' => $this->faker->url(),
+            'description' => $this->faker->paragraph()
+        ];
     }
 }
