@@ -80,7 +80,10 @@
 
         <h1 class="mt-3 text-center">
             {{-- title --}}
-            @yield('title')
+            @auth
+            Hola {{ auth()->user()->name }}... éstos son tus links.
+
+            @endauth
         </h1>
 
         <main class="py-4">
