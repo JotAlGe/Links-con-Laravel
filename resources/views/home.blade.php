@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Lista de LInks')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -13,7 +15,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $link->title }}</h5>
                         <p class="card-text">{{ $link->description }}</p>
-                        <a href="#" class="">{{ $link->url }}</a>
+                        <a href="{{ $link->url }}" class="">{{ $link->url }}</a>
                     </div>
                 </div>
 
