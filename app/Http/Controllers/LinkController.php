@@ -47,7 +47,8 @@ class LinkController extends Controller
      */
     public function show($id)
     {
-        //
+        #$link = Link::findOrFail($id);
+        return view('links.show');
     }
 
     /**
