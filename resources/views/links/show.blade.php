@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
+@section('title', $link->title)
+
 @section('Header', $link->title)
+
 @section('content')
     <div class="card col-lg-6 mx-auto">
         <div class="card-header bg-info text-white">

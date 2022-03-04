@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
+@section('title', 'Links')
+
+@section('Header', 'Listado de links')
 
 @section('content')
-
+    <a class="btn btn-outline-primary" href="{{ route('links.create') }}">Crear Nuevo</a>
     @foreach ($links as $link)
         <div class="card my-3">
             <h5 class="card-header bg-info text-white">Creado hace: {{ $link->created_at->diffForHumans() }}</h5>

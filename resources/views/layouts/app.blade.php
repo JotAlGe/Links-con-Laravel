@@ -7,11 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title', 'Inicio')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="https://kit.fontawesome.com/135afbfc6b.js" crossorigin="anonymous"></script>
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -74,8 +75,8 @@
                 </div>
             </div>
         </nav>
-        <header class="text-center py-4">
-            <h1>@yield('Header', 'Home')</h1>
+        <header class="text-center py-4 bg-info text-white">
+            <h1>@yield('Header', 'Inicio')</h1>
         </header>
         <main class="container py-4">
             @yield('content')
