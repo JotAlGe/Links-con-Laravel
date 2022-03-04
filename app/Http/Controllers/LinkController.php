@@ -56,9 +56,9 @@ class LinkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Link $link)
     {
-        //
+        return view('links.edit', ['link' => $link]);
     }
 
     /**

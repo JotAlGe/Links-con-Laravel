@@ -74,7 +74,9 @@
                 </div>
             </div>
         </nav>
-
+        <header class="text-center py-4">
+            <h1>@yield('Header', 'Home')</h1>
+        </header>
         <main class="container py-4">
             @yield('content')
         </main>
