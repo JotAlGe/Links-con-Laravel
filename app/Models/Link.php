@@ -9,4 +9,8 @@ class Link extends Model
 {
     use HasFactory;
     protected $table = 'links';
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

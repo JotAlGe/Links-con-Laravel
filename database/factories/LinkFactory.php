@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Link;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class LinkFactory extends Factory
 {
@@ -15,9 +16,10 @@ class LinkFactory extends Factory
     protected $model = Link::class;
     public function definition()
     {
+        $title = $this->faker->name();
         return [
-            'title' => $this->faker->name(),
-            'url' => $this->faker->url(),
+            'title' => $title,
+            'slug' => Str::slug($title, '-'),
             'description' => $this->faker->paragraph()
         ];
     }

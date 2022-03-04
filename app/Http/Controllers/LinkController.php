@@ -45,10 +45,9 @@ class LinkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Link $link)
     {
-        #$link = Link::findOrFail($id);
-        return view('links.show');
+        return view('links.show', ['link' => $link]);
     }
 
     /**
