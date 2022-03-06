@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Link;
 use Illuminate\Http\Request;
+use App\Http\Requests\SaveLinksRequest;
 
 class LinkController extends Controller
 {
@@ -34,9 +35,10 @@ class LinkController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, SaveLinksRequest $valid)
     {
-        //
+        $valid->validated();
+        return redirect()->route('links.create')->with('success', 'Todo bien, por ahora');
     }
 
     /**
