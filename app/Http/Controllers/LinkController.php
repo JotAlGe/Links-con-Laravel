@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Link;
 use Illuminate\Http\Request;
 use App\Http\Requests\SaveLinksRequest;
+use Illuminate\Support\Str;
 
 class LinkController extends Controller
 {
@@ -15,7 +16,7 @@ class LinkController extends Controller
      */
     public function index()
     {
-        $links = Link::all();
+        $links = Link::orderBy('created_at', 'desc')->paginate(5);
         return view('links.index', compact('links'));
     }
 
@@ -37,7 +38,16 @@ class LinkController extends Controller
      */
     public function store(Request $request, SaveLinksRequest $valid)
     {
+        $slug = $request->title;
         $valid->validated();
+
+        Link::create([
+            'title' => $request->title,
+            'slug' => Str::slug($slug, '-'),
+            'description' => $request->description
+        ]);
+
+
         return redirect()->route('links.create')->with('success', 'Todo bien, por ahora');
     }
 

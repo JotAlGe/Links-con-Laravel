@@ -26,6 +26,9 @@
             </div>
         @endif
 
+        {{-- slug --}}
+        <input type="hidden" name="slug">
+
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Título</label>
             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese un título..." name="title" value="{{ old('title') }}">
